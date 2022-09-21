@@ -4,9 +4,9 @@ GraphQL implementation example using node
 
 Overview 
 
-GraphQL is a language for querying data.  GraphQL used to query data from any number of different sources.
+    GraphQL is a language for querying data.  GraphQL used to query data from any number of different sources.
 
-With GraphQL, a client (such as a web app) doesn't need to know which data store contains the information it needs. Instead, clients send queries to your GraphQL server (usually over HTTP), which then fetches data from the appropriate data stores.
+    With GraphQL, a client (such as a web app) doesn't need to know which data store contains the information it needs. Instead, clients send queries to your GraphQL server (usually over HTTP), which then fetches data from the appropriate data stores.
 
 
 
