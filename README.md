@@ -67,18 +67,18 @@ Set Up a GraphQL API Server in Node.js
 
    Next create a Graphql schema 
 
-   Create a data object with the values your database 
+     Create a data object with the values your database 
 
-const data = {
-  students: [
-    { id: '110', name: 'Rohit', age: '18', subject: 'Maths' },
-    { id: '112', name: 'Ravi', age: '26', subject: 'Chemistry' },
-    { id: '113', name: 'Reena', age: '21', subject: 'Physics' },
-    { id: '115', name: 'Sima', age: '23', subject: 'Literature' },
-    { id: '117', name: 'Sonia', age: '18', subject: 'English' },
-    { id: '119', name: 'Rahul', age: '26', subject: 'Arts' },
-  ],
-}  
+        const data = {
+          students: [
+            { id: '110', name: 'Rohit', age: '18', subject: 'Maths' },
+            { id: '112', name: 'Ravi', age: '26', subject: 'Chemistry' },
+            { id: '113', name: 'Reena', age: '21', subject: 'Physics' },
+            { id: '115', name: 'Sima', age: '23', subject: 'Literature' },
+            { id: '117', name: 'Sonia', age: '18', subject: 'English' },
+            { id: '119', name: 'Rahul', age: '26', subject: 'Arts' },
+          ],
+        }  
 
 
 
@@ -154,61 +154,61 @@ Now you will be able to see http://localhost:4000/graphql and explore your schem
 
 Make a query to 
 
-{
-  students {
-    id
-    name
-    age
-    subject
-  }
-}
+    {
+      students {
+        id
+        name
+        age
+        subject
+      }
+   }
 
 
 
 And you will see the output 
 
-{
-  "data": {
-    "students": [
-      {
-        "id": "110",
-        "name": "Rohit",
-        "age": 18,
-        "subject": "Maths"
-      },
-      {
-        "id": "112",
-        "name": "Ravi",
-        "age": 26,
-        "subject": "Chemistry"
-      },
-      {
-        "id": "113",
-        "name": "Reena",
-        "age": 21,
-        "subject": "Physics"
-      },
-      {
-        "id": "115",
-        "name": "Sima",
-        "age": 23,
-        "subject": "Literature"
-      },
-      {
-        "id": "117",
-        "name": "Sonia",
-        "age": 18,
-        "subject": "English"
-      },
-      {
-        "id": "119",
-        "name": "Rahul",
-        "age": 26,
-        "subject": "Arts"
+    {
+      "data": {
+        "students": [
+              {
+                "id": "110",
+                "name": "Rohit",
+                "age": 18,
+                "subject": "Maths"
+              },
+              {
+                "id": "112",
+                "name": "Ravi",
+                "age": 26,
+                "subject": "Chemistry"
+              },
+              {
+                "id": "113",
+                "name": "Reena",
+                "age": 21,
+                "subject": "Physics"
+              },
+              {
+                "id": "115",
+                "name": "Sima",
+                "age": 23,
+                "subject": "Literature"
+              },
+              {
+                "id": "117",
+                "name": "Sonia",
+                "age": 18,
+                "subject": "English"
+              },
+              {
+                "id": "119",
+                "name": "Rahul",
+                "age": 26,
+                "subject": "Arts"
+              }
+            ]
+         }
       }
-    ]
-  }
-}
 
 
 
