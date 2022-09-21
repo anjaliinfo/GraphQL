@@ -69,7 +69,7 @@ Set Up a GraphQL API Server in Node.js
 
    Create a data object with the values your database 
 
-   const data = {
+const data = {
   students: [
     { id: '110', name: 'Rohit', age: '18', subject: 'Maths' },
     { id: '112', name: 'Ravi', age: '26', subject: 'Chemistry' },
@@ -81,19 +81,20 @@ Set Up a GraphQL API Server in Node.js
 }  
 
 
+
 GraphQL Schema 
 
-A GraphQL schema relies on a type system. There are some built-in types, and you can also create your own type. As here you will create a new type students with 4 fields id, name, age and subject
+    A GraphQL schema relies on a type system. There are some built-in types, and you can also create your own type. As here you will create a new type students with 4  fields id, name, age and subject
 
-The id has an ID type, name has a String type, age has a Int type and subject has string type. These are both built-in scalars, or primitive types. 
+    The id has an ID type, name has a String type, age has a Int type and subject has string type. These are both built-in scalars, or primitive types. 
 
-The exclamation point (!) means the field is non-nullable, and a value will be required for any instance of this type.
+    The exclamation point (!) means the field is non-nullable, and a value will be required for any instance of this type.
 
 
-The schema you define here will be passed into the makeExecutableSchema function provided by graphql-tools as typeDefs. The two properties passed into an object on the makeExecutableSchema function will be as follows:
+    The schema you define here will be passed into the makeExecutableSchema function provided by graphql-tools as typeDefs. The two properties passed into an object on the makeExecutableSchema function will be as follows:
 
-typeDefs: a GraphQL schema language string.
-resolvers: functions that are called to execute a field and produce a value.
+    typeDefs: a GraphQL schema language string.
+    resolvers: functions that are called to execute a field and produce a value.
 
 
 
@@ -101,51 +102,53 @@ resolvers: functions that are called to execute a field and produce a value.
 GraphQL Resolver Functions
 
 
-Resolvers are a collection of functions that generate a response for the GraphQL server. Each resolver function has four parameters:
+    Resolvers are a collection of functions that generate a response for the GraphQL server. Each resolver function has four parameters:
 
-obj: The parent object, which is not necessary to use here since it is already the root, or top-level object.
-args: Any GraphQL arguments provided to the field.
-context: State shared between all resolvers, often a database connection.
-info: Additional information.
-
-
-
-Here the resolver is created for the root Query type and return a value for students.  
+    obj: The parent object, which is not necessary to use here since it is already the root, or top-level object.
+    args: Any GraphQL arguments provided to the field.
+    context: State shared between all resolvers, often a database connection.
+    info: Additional information.
 
 
-const resolvers = {
-  Query: {
-    students: (obj, args, context, info) => context.students,
-  },
-}
+
+    Here the resolver is created for the root Query type and return a value for students.  
+
+
+    const resolvers = {
+      Query: {
+        students: (obj, args, context, info) => context.students,
+      },
+    }
 
 
 
 The makeExecutableSchema function creates a complete schema that you can pass into the GraphQL endpoint. 
 
-const executableSchema = makeExecutableSchema({
-  typeDefs,
-  resolvers,
-})
+    const executableSchema = makeExecutableSchema({
+      typeDefs,
+      resolvers,
+    })
 
 
 Now replace the default root endpoint that is currently returning Hello, GraphQL! with the following /graphql endpoint by adding these  lines:
 
-app.use(
-  '/graphql',
-  graphqlHTTP({
-    schema: executableSchema,
-    context: data,
-    graphiql: true,
-  })
-)
+    app.use(
+      '/graphql',
+      graphqlHTTP({
+        schema: executableSchema,
+        context: data,
+        graphiql: true,
+      })
+    )
 
 
 
 Save and close the file when you’re done.
 
 
+
 Now you will be able to see http://localhost:4000/graphql and explore your schema using the GraphiQL IDE.
+
 
 
 
@@ -159,6 +162,8 @@ Make a query to
     subject
   }
 }
+
+
 
 And you will see the output 
 
