@@ -2,7 +2,7 @@
 GraphQL implementation example using node 
 
 
-Overview 
+# Overview 
 
     GraphQL is a language for querying data.  GraphQL used to query data from any number of different sources.
 
