@@ -1,6 +1,9 @@
 # GraphQL
-GraphQL implementation example using node 
+GraphQL implementation example using node.
 
+# Installation
+
+Run npm install inside the project folder to install the required dependencies
 
 # Overview 
 
